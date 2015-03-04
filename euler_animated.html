@@ -1,0 +1,149 @@
+<html>
+<head>
+    <title>Euler</title>
+
+
+<style>
+            #canvas {
+                height: 300px;
+                width: 800px;
+
+            }
+            #paper {
+                height: 300px;
+                left: 0;
+                top: 0;
+                width: 300px;
+                 float:left;
+            }
+            #one, #two, #three, #four, #five, #six{
+                display: none;
+                height: 400px;
+                right: 0;
+                top: 0;
+                width: 300px;
+                float:right;
+            }
+</style>
+
+<script src="raphael-min.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+window.onload = function () {
+
+var R = Raphael("paper",400,300);
+
+var attr = {
+                stroke: "#FFFFFF",
+                "stroke-width": 3
+            };
+
+
+var euler = {};
+ euler.one = R.circle(250, 150, 100).attr("fill", "#bf2f2f").attr(attr);
+
+
+ euler.two = R.circle(250, 160, 90).attr("fill", "#bf852f").attr(attr);
+
+
+ euler.three = R.circle(250, 170, 80).attr("fill", "#a2bf2f").attr(attr);
+
+
+ euler.four = R.circle(250, 180, 70).attr("fill", "#4cbf2f").attr(attr);
+
+
+ euler.five = R.circle(250, 190, 60).attr("fill", "#2fbf69").attr(attr);
+
+
+ euler.six = R.circle(250, 200, 50).attr("fill", "#2fbfbf").attr(attr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            var current = null;
+            for (var state in euler) {
+                euler[state].color = Raphael.getColor();
+                (function (st, state) {
+                    st[0].onmouseover = function () {
+                        current && euler[current].animate(document.getElementById(current).style.display = "");
+                        
+                        //st.toFront();
+                        R.safari();
+                        document.getElementById(state).style.display = "block";
+                        current = state;
+                    };
+                    st[0].onmouseout = function () {
+                        //st.toFront();
+                        R.safari();
+                    };
+                /*    if (state == "one") {
+                        st[0].onmouseover();
+                    }
+                    */
+                })(euler[state], state);
+            }
+        };
+
+
+
+
+</script>
+    </head>
+<body>
+
+<div id="canvas">
+	<div id="paper"></div>
+            <div id="one">
+                <h2>One</h2>
+                <p>
+Aliquam pretium, elit et blandit sagittis, turpis nulla tempor ante, ut gravida diam lectus non dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed et ornare ligula, in accumsan odio. Donec ut ultricies massa. Donec eget vehicula eros
+                </p>
+            </div>
+            <div id="two">
+                <h2>Two</h2>
+                <p>
+Fusce purus ipsum, vulputate ac iaculis sit amet, laoreet id enim. Aliquam vel gravida augue. Maecenas ut placerat nisi. Phasellus convallis malesuada arcu, quis tincidunt orci. Suspendisse enim lacus, posuere vel dapibus ut, feugiat nec dui. Curabitur pharetra lacus et nisl tempus ultrices. Ut vestibulum convallis urna sed auctor.
+                </p>
+            </div>
+
+            <div id="three">
+                <h2>Three</h2>
+                <p>
+Sed lobortis mattis volutpat. Cras pretium pretium libero, ut pharetra purus aliquet in. Ut elit ligula, dignissim in leo quis, commodo vulputate nisi. Fusce dignissim, est ut condimentum fringilla, arcu dolor blandit nisi, id egestas eros ipsum sit amet purus. Morbi dignissim eget libero vitae fringilla. Morbi imperdiet lorem at quam dapibus auctor.
+                </p>
+            </div>
+
+                        <div id="four">
+                <h2>Four</h2>
+                <p>
+Ut facilisis pulvinar nisi, vitae vestibulum ipsum facilisis id. Vestibulum feugiat at lorem vel luctus. Phasellus vestibulum, sem non tincidunt porta, urna odio ultricies massa, vel aliquet libero neque interdum mauris. Integer eget ullamcorper tellus, et semper enim. Mauris mattis tempor tincidunt. Morbi rhoncus tortor nec leo accumsan, ut ullamcorper justo sollicitudin.
+                </p>
+            </div>
+
+                        <div id="five">
+                <h2>Five</h2>
+                <p>
+Sed non pharetra nunc. Proin diam justo, dapibus non vehicula nec, maximus ut libero. Donec ante mauris, pulvinar eget placerat sollicitudin, varius quis est. Etiam ornare nulla lorem. Aliquam facilisis pellentesque ipsum, vel hendrerit urna ullamcorper ut. Ut varius magna ac pharetra luctus. Curabitur semper pulvinar nisi. Morbi eget turpis in erat hendrerit faucibus. Aenean facilisis neque augue, vitae auctor ex pharetra et.
+                </p>
+            </div>
+
+                        <div id="six">
+                <h2>Six</h2>
+                <p>
+Donec suscipit at risus in elementum. Proin tempor, risus ac pretium ornare, enim dui tincidunt ipsum, aliquet lacinia sem lacus in nisi. Suspendisse eget enim finibus, tempus sem eget, ullamcorper metus. Mauris vehicula dignissim nisl sit amet tempus. Etiam lacinia luctus varius.
+                </p>
+            </div>
+</div>
+
+</body>
+</html>

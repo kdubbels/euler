@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Euler</title>
+
+
+<style>
+ #canvas {
+                height: 630px;
+                width: 500px;
+            
+}
+</style>
+
+<script src="raphael-min.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+window.onload = function () {
+
+var paper = Raphael("canvas",1000, 1000);
+
+var dot = paper.circle(250, 150, 100).attr("fill", "#FF0000").attr("stroke", "#000099").attr("stroke-width", 3);
+
+}
+
+
+</script>
+    </head>
+<body>
+
+<div id="canvas">
+</div>
+
+</body>
+</html>
